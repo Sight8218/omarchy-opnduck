@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.sight8218.opnduck",
+  "name": "OPNduck",
+  "version": "0.2.0",
+  "author": "Sight8218",
+  "license": "GPL-3.0-or-later",
+  "description": "A cut-down version of OPNduck for the Omarchy bar: download, convert, compress and trim media from a popup. The full app is at github.com/Sight8218/OPNduck.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "OPNduck",
+    "description": "Cut-down OPNduck: download, convert, compress and trim media with the OPNduck engine, right from the bar.",
+    "category": "System",
+    "aliases": [
+      "opnduck",
+      "media",
+      "download",
+      "convert",
+      "compress",
+      "trim",
+      "ffmpeg",
+      "yt-dlp"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {}
+  },
+  "homepage": "https://github.com/Sight8218/omarchy-opnduck"
+}
