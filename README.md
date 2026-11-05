@@ -3,6 +3,8 @@
 > **This is a cut-down version of [OPNduck](https://github.com/Sight8218/OPNduck).**
 > It carries four of OPNduck's tools in a bar popup. **For the whole app, with every tool, the visual UI, themes, the queue/library, recipes, plugins and more, get OPNduck: https://github.com/Sight8218/OPNduck**
 
+![OPNduck popup in the Omarchy bar](preview.png)
+
 OPNduck is a local-first, subscription-free media suite. This plugin puts a small, standalone slice of it into the [Omarchy](https://omarchy.org) shell: click the duck in the bar, paste a link or a file path, and the job runs on your machine.
 
 ## What's in this cut-down version
