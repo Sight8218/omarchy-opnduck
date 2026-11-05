@@ -61,11 +61,12 @@ rm -rf ~/.local/share/omarchy-opnduck   # optional: its settings and history
 
 ## Rebuilding the engine
 
-`backend/opnduck-backend.cjs` is a bundle of OPNduck's job code (`electron/core/` from the main repo) plus `backend/main.cjs`, committed so the plugin works right after install. To rebuild it from source:
+`backend/opnduck-backend.cjs` is a bundle of OPNduck's job code (`electron/core/` from the [main repo](https://github.com/Sight8218/OPNduck)) plus `backend/main.cjs`. It is committed so the plugin works right after install: **nothing is downloaded or built at install time.**
+
+To rebuild it you need a checkout of OPNduck that you have reviewed yourself (with its dependencies installed, `npm ci`), then:
 
 ```sh
-git clone https://github.com/Sight8218/OPNduck && (cd OPNduck && npm ci)
-OPNDUCK_SRC=$PWD/OPNduck backend/build.sh
+OPNDUCK_SRC=/path/to/your/OPNduck-checkout backend/build.sh
 ```
 
 ## License
