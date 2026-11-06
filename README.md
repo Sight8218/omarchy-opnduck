@@ -50,7 +50,9 @@ Click the duck. Pick a tool, fill in the form, press **Start**. Middle-click the
 - Keeps its own settings and job history in `~/.local/share/omarchy-opnduck/` (separate from the OPNduck desktop app's data).
 - Starts one background `node` process (the engine) while the shell runs. It reads commands from the shell over stdin and does not listen on any network port.
 - Download talks to the sites you give it, through yt-dlp. Nothing else makes network requests.
-- No sudo, no services, no files outside the folders above.
+- No sudo, no services, no package installs, no files outside the folders above. When `ffmpeg` or `yt-dlp` is missing it only shows a message; install them yourself.
+- The engine accepts exactly four commands' worth of tools (download, convert, compress, trim) plus queue controls (cancel, pause, resume, clear, show in folder).
+- Compress with the GPU option may run `nvidia-smi` to check for NVENC.
 
 ## Remove
 
@@ -61,7 +63,7 @@ rm -rf ~/.local/share/omarchy-opnduck   # optional: its settings and history
 
 ## Rebuilding the engine
 
-`backend/opnduck-backend.cjs` is a bundle of OPNduck's job code (`electron/core/` from the [main repo](https://github.com/Sight8218/OPNduck)) plus `backend/main.cjs`. It is committed so the plugin works right after install: **nothing is downloaded or built at install time.**
+`backend/opnduck-backend.cjs` is a bundle of only the OPNduck job modules this plugin uses (settings, tool checks, task queue, convert, trim, compress, download, from `electron/core/` in the [main repo](https://github.com/Sight8218/OPNduck)) plus `backend/main.cjs`. It does not include the assistant, plugin host, scheduler or other tools. `backend/build.sh` also neutralises the core's install-hint text and power helper, so the bundle contains no `sudo`, package-manager or `systemctl` commands. It is committed so the plugin works right after install: **nothing is downloaded or built at install time.**
 
 To rebuild it you need a checkout of OPNduck that you have reviewed yourself (with its dependencies installed, `npm ci`), then:
 

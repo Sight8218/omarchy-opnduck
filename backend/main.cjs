@@ -11,14 +11,43 @@ fs.mkdirSync(OUT, { recursive: true })
 process.env.XDG_CONFIG_HOME = DATA // userDataDir() = $XDG_CONFIG_HOME/opnduck-desktop -> separate settings + history
 
 const { createNodePlatform } = require('@opnduck/electron/core/platform.cjs')
-const { createCore } = require('@opnduck/electron/core/index.cjs')
 const { TOOLS, buildStartRequest } = require('@opnduck/electron/mcp_tools.cjs')
 
 const send = (o) => process.stdout.write(JSON.stringify(o) + '\n')
 const platform = createNodePlatform({ version: '0.1.0', scriptsDir: __dirname })
 platform.paths.downloads = OUT
 platform.notify = () => true // the shell shows its own state
-const core = createCore({ platform })
+
+// A minimal core: only the four job modules this plugin exposes (not OPNduck's full createCore, which also wires the
+// assistant, plugin host, scheduler and every other tool).
+function createCore4(platform) {
+  const settings = require('@opnduck/electron/core/settings.cjs')
+  settings.configure(platform)
+  const { getSettings, ytdlpBaseArgs, hasCookies } = settings
+  const tools = require('@opnduck/electron/core/tools.cjs').createTools(platform)
+  const engine = require('@opnduck/electron/core/tasks.cjs').createTaskEngine({ platform, getSettings, onFinished: () => {} })
+  const ctx = { platform, tools, getSettings, ytdlpBaseArgs, hasCookies, ...tools, ...engine, ...engine.pools, handleStart: (channel, fn) => engine.wrapStart(channel, fn) }
+  const add = (create) => Object.assign(ctx, create(ctx))
+  add(require('@opnduck/electron/core/common.cjs').createCommon)
+  add(require('@opnduck/electron/core/convert.cjs').createConvert)
+  add(require('@opnduck/electron/core/trim.cjs').createTrim)
+  add(require('@opnduck/electron/core/gpu_jobs.cjs').createGpuJobs) // compress uses its NVENC check
+  add(require('@opnduck/electron/core/compress.cjs').createCompress)
+  add(require('@opnduck/electron/core/download.cjs').createDownload)
+  return {
+    engine,
+    startJob(channel, req) {
+      const start = engine.startHandlers.get(channel)
+      if (!start) throw new Error(`Unknown job: ${channel}`)
+      return start(null, req)
+    },
+    shutdown() {
+      for (const e of engine.tasks.values()) if (e.state.status === 'queued' || e.state.status === 'running') engine.killTask(e)
+      engine.saveHistory()
+    },
+  }
+}
+const core = createCore4(platform)
 core.engine.loadHistory()
 core.engine.applyQueueLimits()
 
