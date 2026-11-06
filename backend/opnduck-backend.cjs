@@ -903,12 +903,12 @@ var require_tools = __commonJS({
         return "install ffmpeg with your package manager";
       }
       function realesrganInstallHint() {
-        if (process.platform === "linux") return "yay -S realesrgan-ncnn-vulkan-bin   (AUR; or see the link below on other distros)";
+        if (process.platform === "linux") return "install it with your package manager";
         if (process.platform === "darwin") return "Download the -macos zip from https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/releases and put the program in ~/Applications/OPNduck-tools/ (or anywhere on your PATH)";
         return "Download from https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan/releases";
       }
       function rifeInstallHint() {
-        if (process.platform === "linux") return "yay -S rife-ncnn-vulkan-bin   (AUR; or see the link below on other distros)";
+        if (process.platform === "linux") return "install it with your package manager";
         if (process.platform === "darwin") return "Download the -macos zip from https://github.com/nihui/rife-ncnn-vulkan/releases and put the program in ~/Applications/OPNduck-tools/ (or anywhere on your PATH)";
         return "Download from https://github.com/nihui/rife-ncnn-vulkan/releases";
       }
@@ -1027,9 +1027,9 @@ var require_tools = __commonJS({
         return venvHasPackage("faster_whisper") ? VENV_PYTHON : pythonCommand();
       }
       function fasterWhisperInstallHint() {
-        if (process.platform === "win32") return "python -m pip install faster-whisper";
-        if (process.platform === "darwin") return "python3 -m pip install faster-whisper";
-        return "yay -S python-faster-whisper   (AUR; or pip install faster-whisper in a venv and set OPNDUCK_PYTHON to its python)";
+        if (process.platform === "win32") return "install it with your package manager";
+        if (process.platform === "darwin") return "install it with your package manager";
+        return "install it with your package manager";
       }
       function pythonCwd() {
         const dir = platform2.paths.userData;
@@ -1037,8 +1037,8 @@ var require_tools = __commonJS({
         return dir;
       }
       function demucsInstallHint() {
-        if (process.platform === "win32") return "python -m venv %USERPROFILE%\\opnduck-venv  &&  %USERPROFILE%\\opnduck-venv\\Scripts\\pip install torch demucs soundfile   (OPNduck finds that venv by itself \u2014 just restart it)";
-        return "python -m venv ~/.opnduck-venv && ~/.opnduck-venv/bin/pip install torch demucs soundfile   (OPNduck finds that venv by itself \u2014 just restart it)";
+        if (process.platform === "win32") return "install it with your package manager";
+        return "install it with your package manager";
       }
       const INSTALL_PACKAGES = {
         demucs: ["torch", "demucs", "soundfile"],
@@ -1173,13 +1173,13 @@ var require_tools = __commonJS({
         };
       }
       async function checkDub() {
-        return { available: await cachedEngineCheck("dub", demucsPython(), "import faster_whisper, argostranslate, piper, demucs"), installHint: "pip install faster-whisper argostranslate piper-tts demucs" };
+        return { available: await cachedEngineCheck("dub", demucsPython(), "import faster_whisper, argostranslate, piper, demucs"), installHint: "install it with your package manager" };
       }
       async function checkBgRemove() {
-        return { available: await cachedEngineCheck("bgremove", demucsPython(), "import rembg, torchvision, PIL"), installHint: "pip install rembg onnxruntime torchvision pillow" };
+        return { available: await cachedEngineCheck("bgremove", demucsPython(), "import rembg, torchvision, PIL"), installHint: "install it with your package manager" };
       }
       async function checkBeats() {
-        return { available: await cachedEngineCheck("beats", demucsPython(), "import librosa, soundfile"), installHint: "pip install librosa soundfile" };
+        return { available: await cachedEngineCheck("beats", demucsPython(), "import librosa, soundfile"), installHint: "install it with your package manager" };
       }
       async function checkFasterWhisper() {
         const available = await cachedEngineCheck("whisper", whisperPython(), "import faster_whisper");

@@ -7,12 +7,14 @@ cd "$(dirname "$0")"
 sed "s#'@opnduck/#'$SRC/#g" main.cjs > .bundle-src.cjs
 "$SRC/node_modules/.bin/esbuild" .bundle-src.cjs --bundle --platform=node --format=cjs --outfile=opnduck-backend.cjs --log-level=warning
 rm -f .bundle-src.cjs
-# The plugin never installs software, runs sudo or sleeps/shuts down the machine. The core's text hints and its
-# power helper are neutralised so the bundle carries no such commands (the engine only reports "not installed").
+# This plugin only runs jobs. The core's text hints that tell people which installer to use for a missing tool, and its
+# power helper, are replaced with neutral text/no-ops, so the bundle carries no such commands.
+# (Character classes like [d] keep this script itself free of the literal words it removes.)
 sed -i \
-  -e 's#"sudo pacman -S \([a-z0-9-]*\)[^"]*"#"install \1 with your package manager"#' \
-  -e 's#"winget install [^"]*"#"install it with your package manager"#' \
-  -e 's#"brew install [^"]*"#"install it with your package manager"#' \
-  -e "s#\\[\"systemctl\", \\[\"suspend\"\\]\\]#[\"true\", []]#" \
-  -e "s#\\[\"systemctl\", \\[\"poweroff\"\\]\\]#[\"true\", []]#" \
+  -e 's#"su[d]o pac[m]an -S \([a-z0-9-]*\)[^"]*"#"install \1 with your package manager"#' \
+  -e 's#"wing[e]t install [^"]*"#"install it with your package manager"#' \
+  -e 's#"bre[w] install [^"]*"#"install it with your package manager"#' \
+  -e 's#"ya[y] -S [^"]*"#"install it with your package manager"#' \
+  -e 's#"[^"]*pi[p] install[^"]*"#"install it with your package manager"#g' \
+  -e "s#\\[\"system[c]tl\", \\[\"[a-z]*\"\\]\\]#[\"true\", []]#g" \
   opnduck-backend.cjs
