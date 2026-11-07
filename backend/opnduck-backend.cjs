@@ -7,9 +7,9 @@ var __commonJS = (cb, mod) => function __require() {
   }
 };
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/platform.cjs
+// ../../opnduck/electron/core/platform.cjs
 var require_platform = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/platform.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/platform.cjs"(exports2, module2) {
     var { EventEmitter } = require("node:events");
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
@@ -106,9 +106,9 @@ var require_platform = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/mcp_tools.cjs
+// ../../opnduck/electron/mcp_tools.cjs
 var require_mcp_tools = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/mcp_tools.cjs"(exports2, module2) {
+  "../../opnduck/electron/mcp_tools.cjs"(exports2, module2) {
     var FILE = { type: "string", description: "Absolute path to an existing file on this computer." };
     var JOB_ID = { type: "string", description: "A job id from list_jobs or from a start tool." };
     var TOOLS2 = [
@@ -565,9 +565,9 @@ var require_mcp_tools = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/settings.cjs
+// ../../opnduck/electron/core/settings.cjs
 var require_settings = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/settings.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/settings.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     var { userDataDir } = require_platform();
@@ -850,9 +850,9 @@ var require_settings = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/tools.cjs
+// ../../opnduck/electron/core/tools.cjs
 var require_tools = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/tools.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/tools.cjs"(exports2, module2) {
     var { spawn } = require("node:child_process");
     var crypto2 = require("node:crypto");
     var fs2 = require("node:fs");
@@ -1280,9 +1280,9 @@ ${res.tail}` };
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/tasks.cjs
+// ../../opnduck/electron/core/tasks.cjs
 var require_tasks = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/tasks.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/tasks.cjs"(exports2, module2) {
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
     var path2 = require("node:path");
@@ -1644,9 +1644,9 @@ var require_tasks = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/common.cjs
+// ../../opnduck/electron/core/common.cjs
 var require_common = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/common.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/common.cjs"(exports2, module2) {
     var path2 = require("node:path");
     var fs2 = require("node:fs");
     var { spawn } = require("node:child_process");
@@ -1987,9 +1987,9 @@ var require_common = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/convert.cjs
+// ../../opnduck/electron/core/convert.cjs
 var require_convert = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/convert.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/convert.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     var os2 = require("node:os");
@@ -2223,9 +2223,9 @@ var require_convert = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/trim.cjs
+// ../../opnduck/electron/core/trim.cjs
 var require_trim = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/trim.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/trim.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     function createTrim(ctx) {
@@ -2319,9 +2319,9 @@ var require_trim = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/gpu_jobs.cjs
+// ../../opnduck/electron/core/gpu_jobs.cjs
 var require_gpu_jobs = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/gpu_jobs.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/gpu_jobs.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     var { spawn } = require("node:child_process");
@@ -2886,9 +2886,9 @@ var require_gpu_jobs = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/compress.cjs
+// ../../opnduck/electron/core/compress.cjs
 var require_compress = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/compress.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/compress.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var os2 = require("node:os");
     var path2 = require("node:path");
@@ -3076,12 +3076,52 @@ var require_compress = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/download.cjs
+// ../../opnduck/electron/core/download.cjs
 var require_download = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/download.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/download.cjs"(exports2, module2) {
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
+    var os2 = require("node:os");
     var path2 = require("node:path");
+    function protectUrlCredentials(rawUrl) {
+      const none = { url: rawUrl, args: [], cleanup() {
+      } };
+      let u;
+      try {
+        u = new URL(rawUrl);
+      } catch {
+        return none;
+      }
+      if (!u.username && !u.password) return none;
+      const user = decodeURIComponent(u.username);
+      const pass = decodeURIComponent(u.password);
+      u.username = "";
+      u.password = "";
+      const dir = fs2.mkdtempSync(path2.join(os2.tmpdir(), "opnduck-auth-"));
+      fs2.chmodSync(dir, 448);
+      const file = path2.join(dir, "auth.conf");
+      const token = Buffer.from(`${user}:${pass}`).toString("base64");
+      fs2.writeFileSync(file, `--add-headers "Authorization:Basic ${token}"
+`, { mode: 384 });
+      return {
+        url: u.toString(),
+        args: ["--config-locations", file],
+        cleanup() {
+          fs2.rmSync(dir, { recursive: true, force: true });
+        }
+      };
+    }
+    function redactUrl(rawUrl) {
+      try {
+        const u = new URL(rawUrl);
+        if (!u.username && !u.password) return rawUrl;
+        u.username = "";
+        u.password = "";
+        return u.toString();
+      } catch {
+        return rawUrl;
+      }
+    }
     function createDownload(ctx) {
       const {
         parseHttpUrl,
@@ -3216,12 +3256,16 @@ var require_download = __commonJS({
       function probePlaylist(url) {
         return new Promise((resolve) => {
           let child;
+          const auth = protectUrlCredentials(url);
           try {
-            child = spawn(ytdlpCommand(), [...ytdlpBaseArgs(), "--flat-playlist", "--dump-single-json", "--no-warnings", "--playlist-end", "5000", "--", url]);
+            child = spawn(ytdlpCommand(), [...ytdlpBaseArgs(), ...auth.args, "--flat-playlist", "--dump-single-json", "--no-warnings", "--playlist-end", "5000", "--", auth.url]);
           } catch {
+            auth.cleanup();
             resolve(null);
             return;
           }
+          child.on("close", auth.cleanup);
+          child.on("error", auth.cleanup);
           let out = "";
           const timer = setTimeout(() => child.kill(), 45e3);
           child.stdout.on("data", (c) => {
@@ -3270,14 +3314,18 @@ var require_download = __commonJS({
           };
         }
         const single = await new Promise((resolve) => {
-          const fallback = { title: req.url, approxSizeBytes: null, thumbnailUrl: null };
+          const fallback = { title: redactUrl(req.url), approxSizeBytes: null, thumbnailUrl: null };
           let child;
+          const auth = protectUrlCredentials(effectiveUrl);
           try {
-            child = spawn(ytdlpCommand(), [...ytdlpBaseArgs(), "--dump-json", "--no-warnings", "--no-playlist", "--", effectiveUrl]);
+            child = spawn(ytdlpCommand(), [...ytdlpBaseArgs(), ...auth.args, "--dump-json", "--no-warnings", "--no-playlist", "--", auth.url]);
           } catch {
+            auth.cleanup();
             resolve(fallback);
             return;
           }
+          child.on("close", auth.cleanup);
+          child.on("error", auth.cleanup);
           let out = "";
           const timer = setTimeout(() => child.kill(), 6e4);
           child.stdout.on("data", (c) => {
@@ -3292,7 +3340,7 @@ var require_download = __commonJS({
             try {
               const info = JSON.parse(out.trim().split("\n")[0]);
               resolve({
-                title: spotify ? `${spotify.label} (YouTube match)` : info.title ?? req.url,
+                title: spotify ? `${spotify.label} (YouTube match)` : info.title ?? redactUrl(req.url),
                 approxSizeBytes: estimateSize(info, req),
                 thumbnailUrl: info.thumbnail ?? null,
                 ...extraInfo(info)
@@ -3406,7 +3454,7 @@ var require_download = __commonJS({
             kind: "download",
             status: "queued",
             progress: 0,
-            label: req.url,
+            label: redactUrl(req.url),
             format: req.format,
             quality: qualityLabel(req),
             sizeBytes: Number.isFinite(req.approxSizeBytes) && req.approxSizeBytes >= 0 ? req.approxSizeBytes : null,
@@ -3509,10 +3557,14 @@ var require_download = __commonJS({
           "--",
           effectiveUrl
         ];
+        const auth = protectUrlCredentials(effectiveUrl);
+        args[args.length - 1] = auth.url;
+        args.unshift(...auth.args);
         await downloadPool.acquire();
         const slotEntry = tasks.get(id);
         if (!slotEntry || isCanceled(id)) {
           downloadPool.release();
+          auth.cleanup();
           return id;
         }
         let slotReleased = false;
@@ -3525,8 +3577,11 @@ var require_download = __commonJS({
         let child;
         try {
           child = spawn(ytdlpCommand(), args);
+          child.on("close", auth.cleanup);
+          child.on("error", auth.cleanup);
           attachLog(child, id);
         } catch (err) {
+          auth.cleanup();
           updateTask(id, { status: "error", error: `Failed to start yt-dlp: ${err.message}` });
           return id;
         }
@@ -3634,12 +3689,16 @@ var require_download = __commonJS({
         const url = link.kind === "only" ? listUrl(link, limit) : rawUrl;
         return new Promise((resolve) => {
           let child;
+          const auth = protectUrlCredentials(url);
           try {
-            child = spawn(ytdlpCommand(), [...ytdlpBaseArgs(), "--flat-playlist", "--dump-single-json", "--no-warnings", "--playlist-end", String(limit), "--", url]);
+            child = spawn(ytdlpCommand(), [...ytdlpBaseArgs(), ...auth.args, "--flat-playlist", "--dump-single-json", "--no-warnings", "--playlist-end", String(limit), "--", auth.url]);
           } catch {
+            auth.cleanup();
             resolve(null);
             return;
           }
+          child.on("close", auth.cleanup);
+          child.on("error", auth.cleanup);
           let out = "";
           const timer = setTimeout(() => child.kill(), 6e4);
           child.stdout.on("data", (c) => {
