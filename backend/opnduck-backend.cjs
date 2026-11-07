@@ -1280,9 +1280,24 @@ ${res.tail}` };
   }
 });
 
+// ../../../../../../../../home/ducky/Work/opnduck/electron/core/redact.cjs
+var require_redact = __commonJS({
+  "../../../../../../../../home/ducky/Work/opnduck/electron/core/redact.cjs"(exports2, module2) {
+    var LINK_LOGIN = /\b([a-z][a-z0-9+.-]*:\/\/)[^\s/@"'\\]+@/gi;
+    function stripLinkLogin(text) {
+      return typeof text === "string" ? text.replace(LINK_LOGIN, "$1") : text;
+    }
+    function stripLinkLoginDeep(value) {
+      return JSON.parse(stripLinkLogin(JSON.stringify(value)));
+    }
+    module2.exports = { stripLinkLogin, stripLinkLoginDeep };
+  }
+});
+
 // ../../../../../../../../home/ducky/Work/opnduck/electron/core/tasks.cjs
 var require_tasks = __commonJS({
   "../../../../../../../../home/ducky/Work/opnduck/electron/core/tasks.cjs"(exports2, module2) {
+    var { stripLinkLogin, stripLinkLoginDeep } = require_redact();
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
     var path2 = require("node:path");
@@ -1306,7 +1321,7 @@ var require_tasks = __commonJS({
         const parts = (log.partial[stream] + String(chunk)).split(/\r?\n|\r/);
         log.partial[stream] = parts.pop() ?? "";
         for (const raw of parts) {
-          const line = raw.replace(/\s+$/, "").slice(0, 300);
+          const line = stripLinkLogin(raw.replace(/\s+$/, "")).slice(0, 300);
           if (!line || LOG_NOISE.test(line)) continue;
           const isPct = /^\[download\]\s+\d/.test(line);
           const replace = isPct && /^\[download\]\s+\d/.test(log.lines[log.lines.length - 1] ?? "");
@@ -1374,7 +1389,7 @@ var require_tasks = __commonJS({
       function saveHistory() {
         clearTimeout(saveTimer);
         try {
-          const finished = [...tasks.values()].filter((t) => TERMINAL.includes(t.state.status) && t.channel).slice(-MAX_HISTORY).map((t) => ({ state: t.state, channel: t.channel, req: t.req, finalPath: t.finalPath ?? null }));
+          const finished = [...tasks.values()].filter((t) => TERMINAL.includes(t.state.status) && t.channel).slice(-MAX_HISTORY).map((t) => stripLinkLoginDeep({ state: t.state, channel: t.channel, req: t.req, finalPath: t.finalPath ?? null }));
           fs2.mkdirSync(path2.dirname(historyFile()), { recursive: true });
           const tmp = `${historyFile()}.tmp`;
           fs2.writeFileSync(tmp, JSON.stringify(finished));
@@ -3079,6 +3094,7 @@ var require_compress = __commonJS({
 // ../../../../../../../../home/ducky/Work/opnduck/electron/core/download.cjs
 var require_download = __commonJS({
   "../../../../../../../../home/ducky/Work/opnduck/electron/core/download.cjs"(exports2, module2) {
+    var { stripLinkLogin } = require_redact();
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
     var os2 = require("node:os");
@@ -3652,7 +3668,7 @@ var require_download = __commonJS({
           if (signal || code !== 0 && !partial) {
             updateTask(id, {
               status: "error",
-              error: stderrTail.trim().split("\n").pop() || `yt-dlp exited with code ${code}`
+              error: stripLinkLogin(stderrTail.trim().split("\n").pop() ?? "") || `yt-dlp exited with code ${code}`
             });
             return;
           }
