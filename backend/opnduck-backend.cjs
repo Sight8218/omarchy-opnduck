@@ -3126,6 +3126,8 @@ var require_download = __commonJS({
       };
     }
     var LOGIN_PAGE_MSG = "A link with a login only works for a direct file link, not a web page. Open the file itself (\u2026/video.mp4) or use a link without the login.";
+    var LOGIN_CHECK_MSG = "Couldn't check that this link with a login is a direct file (the server refused it, did not answer, or did not say it is a video/audio file). Check the login and the link, or use a link without the login.";
+    var DIRECT_FILE_TYPE = /^(video|audio)\/|^application\/(octet-stream|ogg|mp4|x-matroska)(;|$)/;
     async function loginLinkProblem(rawUrl) {
       let u;
       try {
@@ -3152,13 +3154,14 @@ var require_download = __commonJS({
             next = new URL(loc, target).toString();
             continue;
           }
-          if (res.status >= 400) return null;
-          return /^(text\/|application\/(xhtml|xml|json|ld\+json))/.test(type) ? LOGIN_PAGE_MSG : null;
+          if (res.status >= 400) return LOGIN_CHECK_MSG;
+          if (DIRECT_FILE_TYPE.test(type)) return null;
+          return type ? LOGIN_PAGE_MSG : LOGIN_CHECK_MSG;
         }
       } catch {
-        return null;
+        return LOGIN_CHECK_MSG;
       }
-      return null;
+      return LOGIN_CHECK_MSG;
     }
     function redactUrl(rawUrl) {
       try {
