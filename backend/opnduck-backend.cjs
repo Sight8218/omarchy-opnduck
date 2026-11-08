@@ -7,9 +7,9 @@ var __commonJS = (cb, mod) => function __require() {
   }
 };
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/platform.cjs
+// ../../opnduck/electron/core/platform.cjs
 var require_platform = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/platform.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/platform.cjs"(exports2, module2) {
     var { EventEmitter } = require("node:events");
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
@@ -106,9 +106,9 @@ var require_platform = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/mcp_tools.cjs
+// ../../opnduck/electron/mcp_tools.cjs
 var require_mcp_tools = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/mcp_tools.cjs"(exports2, module2) {
+  "../../opnduck/electron/mcp_tools.cjs"(exports2, module2) {
     var FILE = { type: "string", description: "Absolute path to an existing file on this computer." };
     var JOB_ID = { type: "string", description: "A job id from list_jobs or from a start tool." };
     var TOOLS2 = [
@@ -565,9 +565,9 @@ var require_mcp_tools = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/settings.cjs
+// ../../opnduck/electron/core/settings.cjs
 var require_settings = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/settings.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/settings.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     var { userDataDir } = require_platform();
@@ -850,9 +850,9 @@ var require_settings = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/tools.cjs
+// ../../opnduck/electron/core/tools.cjs
 var require_tools = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/tools.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/tools.cjs"(exports2, module2) {
     var { spawn } = require("node:child_process");
     var crypto2 = require("node:crypto");
     var fs2 = require("node:fs");
@@ -1280,9 +1280,9 @@ ${res.tail}` };
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/redact.cjs
+// ../../opnduck/electron/core/redact.cjs
 var require_redact = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/redact.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/redact.cjs"(exports2, module2) {
     var LINK_LOGIN = /\b([a-z][a-z0-9+.-]*:\/\/)[^\s/@"'\\]+@/gi;
     function stripLinkLogin(text) {
       return typeof text === "string" ? text.replace(LINK_LOGIN, "$1") : text;
@@ -1294,9 +1294,9 @@ var require_redact = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/tasks.cjs
+// ../../opnduck/electron/core/tasks.cjs
 var require_tasks = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/tasks.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/tasks.cjs"(exports2, module2) {
     var { stripLinkLogin, stripLinkLoginDeep } = require_redact();
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
@@ -1659,9 +1659,9 @@ var require_tasks = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/common.cjs
+// ../../opnduck/electron/core/common.cjs
 var require_common = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/common.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/common.cjs"(exports2, module2) {
     var path2 = require("node:path");
     var fs2 = require("node:fs");
     var { spawn } = require("node:child_process");
@@ -2002,9 +2002,9 @@ var require_common = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/convert.cjs
+// ../../opnduck/electron/core/convert.cjs
 var require_convert = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/convert.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/convert.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     var os2 = require("node:os");
@@ -2238,9 +2238,9 @@ var require_convert = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/trim.cjs
+// ../../opnduck/electron/core/trim.cjs
 var require_trim = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/trim.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/trim.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     function createTrim(ctx) {
@@ -2334,9 +2334,9 @@ var require_trim = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/gpu_jobs.cjs
+// ../../opnduck/electron/core/gpu_jobs.cjs
 var require_gpu_jobs = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/gpu_jobs.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/gpu_jobs.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var path2 = require("node:path");
     var { spawn } = require("node:child_process");
@@ -2901,9 +2901,9 @@ var require_gpu_jobs = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/compress.cjs
+// ../../opnduck/electron/core/compress.cjs
 var require_compress = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/compress.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/compress.cjs"(exports2, module2) {
     var fs2 = require("node:fs");
     var os2 = require("node:os");
     var path2 = require("node:path");
@@ -3091,9 +3091,9 @@ var require_compress = __commonJS({
   }
 });
 
-// ../../../../../../../../home/ducky/Work/opnduck/electron/core/download.cjs
+// ../../opnduck/electron/core/download.cjs
 var require_download = __commonJS({
-  "../../../../../../../../home/ducky/Work/opnduck/electron/core/download.cjs"(exports2, module2) {
+  "../../opnduck/electron/core/download.cjs"(exports2, module2) {
     var { stripLinkLogin } = require_redact();
     var { spawn } = require("node:child_process");
     var fs2 = require("node:fs");
@@ -3124,6 +3124,41 @@ var require_download = __commonJS({
           fs2.rmSync(dir, { recursive: true, force: true });
         }
       };
+    }
+    var LOGIN_PAGE_MSG = "A link with a login only works for a direct file link, not a web page. Open the file itself (\u2026/video.mp4) or use a link without the login.";
+    async function loginLinkProblem(rawUrl) {
+      let u;
+      try {
+        u = new URL(rawUrl);
+      } catch {
+        return null;
+      }
+      if (!u.username && !u.password) return null;
+      const auth = "Basic " + Buffer.from(`${decodeURIComponent(u.username)}:${decodeURIComponent(u.password)}`).toString("base64");
+      const origin = u.origin;
+      u.username = "";
+      u.password = "";
+      let next = u.toString();
+      try {
+        for (let hop = 0; hop < 6; hop++) {
+          const target = new URL(next);
+          const headers = target.origin === origin ? { authorization: auth } : {};
+          const res = await fetch(target, { method: "GET", headers: { ...headers, range: "bytes=0-0" }, redirect: "manual", signal: AbortSignal.timeout(1e4) });
+          const loc = res.headers.get("location");
+          const type = (res.headers.get("content-type") || "").toLowerCase();
+          res.body?.cancel().catch(() => {
+          });
+          if (res.status >= 300 && res.status < 400 && loc) {
+            next = new URL(loc, target).toString();
+            continue;
+          }
+          if (res.status >= 400) return null;
+          return /^(text\/|application\/(xhtml|xml|json|ld\+json))/.test(type) ? LOGIN_PAGE_MSG : null;
+        }
+      } catch {
+        return null;
+      }
+      return null;
     }
     function redactUrl(rawUrl) {
       try {
@@ -3312,6 +3347,8 @@ var require_download = __commonJS({
         const spotify = await resolveSpotifyTrack(req.url);
         if (spotify?.error) return { title: spotify.error, ...empty };
         const effectiveUrl = spotify?.query ?? req.url;
+        const loginProblem = await loginLinkProblem(effectiveUrl);
+        if (loginProblem) return { title: loginProblem, ...empty };
         const link = spotify ? classifyLink("") : classifyLink(req.url);
         const kind = link.kind;
         const loginMissing = link.needsLogin && !hasCookies();
@@ -3490,6 +3527,11 @@ var require_download = __commonJS({
           return id;
         }
         if (isCanceled(id)) return id;
+        const loginProblem = await loginLinkProblem(spotify?.query ?? req.url);
+        if (loginProblem) {
+          updateTask(id, { status: "error", error: loginProblem });
+          return id;
+        }
         if (spotify) {
           const exclude = req.matchExclude ?? [];
           const want = exclude.length + 5;
